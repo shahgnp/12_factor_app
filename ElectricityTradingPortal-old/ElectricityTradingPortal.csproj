@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>ElectricityTradingPortal</RootNamespace>
+  </PropertyGroup>
+
+  <!-- Drop-in improvement candidates are kept out of the default build.
+       To apply them, copy the matching file from Improvements/ over the
+       original (see Improvements/SWAP.md). -->
+  <ItemGroup>
+    <Compile Remove="Improvements/**/*.cs" />
+  </ItemGroup>
+
+</Project>

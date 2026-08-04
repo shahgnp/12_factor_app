@@ -1,0 +1,84 @@
+@page
+@model ElectricityTradingPortal.Pages.Orders.CreateModel
+@{
+    ViewData["Title"] = "Submit Order";
+}
+
+<h1>Submit Order</h1>
+
+@if (Model.DraftSavedId is not null)
+{
+    <div class="notice">
+        <p>Draft saved. <a asp-page="/Orders/Create" asp-route-draft="@Model.DraftSavedId">Continue editing this draft</a>.</p>
+    </div>
+}
+
+<div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+
+<form method="post" class="order-form">
+    <input type="hidden" asp-for="DraftId" />
+
+    <div class="field">
+        <label asp-for="Form.Trader">Trader</label>
+        <input asp-for="Form.Trader" autocomplete="off" />
+        <span asp-validation-for="Form.Trader"></span>
+    </div>
+
+    <div class="field">
+        <label asp-for="Form.Commodity">Commodity</label>
+        <select asp-for="Form.Commodity">
+            <option value="">— select —</option>
+            <option value="Peak Power">Peak Power</option>
+            <option value="Off-Peak Power">Off-Peak Power</option>
+        </select>
+        <span asp-validation-for="Form.Commodity"></span>
+    </div>
+
+    <div class="field">
+        <label asp-for="Form.Side">Side</label>
+        <select asp-for="Form.Side">
+            <option value="Buy">Buy</option>
+            <option value="Sell">Sell</option>
+        </select>
+    </div>
+
+    <div class="field-row">
+        <div class="field">
+            <label asp-for="Form.Volume">Volume (MWh)</label>
+            <input asp-for="Form.Volume" type="number" step="0.01" min="0" />
+            <span asp-validation-for="Form.Volume"></span>
+        </div>
+
+        <div class="field">
+            <label asp-for="Form.Price">Price (per MWh)</label>
+            <input asp-for="Form.Price" type="number" step="0.01" min="0" />
+            <span asp-validation-for="Form.Price"></span>
+        </div>
+    </div>
+
+    <div class="actions">
+        <button type="submit" asp-page-handler="Submit" class="btn btn-primary">Submit Order</button>
+        <button type="submit" asp-page-handler="SaveDraft" class="btn">Save as Draft</button>
+        <span id="value-preview" class="value-preview"></span>
+    </div>
+</form>
+
+@section Scripts {
+    <script>
+        var volume = document.getElementById("Form_Volume");
+        var price = document.getElementById("Form_Price");
+        var preview = document.getElementById("value-preview");
+
+        function refreshPreview() {
+            var v = parseFloat(volume.value) || 0;
+            var p = parseFloat(price.value) || 0;
+            preview.textContent = "Order value: " + (v * p).toLocaleString("en-US", { style: "currency", currency: "USD" });
+        }
+
+        if (volume && price && preview) {
+            volume.addEventListener("input", refreshPreview);
+            price.addEventListener("input", refreshPreview);
+            refreshPreview();
+        }
+    </script>
+}

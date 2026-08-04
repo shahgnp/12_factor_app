@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] — Electricity Trading Portal</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="topbar">
+            <a class="brand" asp-page="/Orders/Index">Electricity Trading Portal</a>
+            <div class="links">
+                <a asp-page="/Orders/Index">Orders</a>
+                <a asp-page="/Orders/Create">Submit Order</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        @RenderBody()
+    </main>
+
+    <footer class="footer">
+        <span>&copy; @DateTime.Now.Year Electricity Trading Portal</span>
+    </footer>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

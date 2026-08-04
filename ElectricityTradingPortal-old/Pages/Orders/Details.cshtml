@@ -1,0 +1,47 @@
+@page "/Orders/{id}"
+@model ElectricityTradingPortal.Pages.Orders.DetailsModel
+@{
+    ViewData["Title"] = "Order Details";
+}
+
+@if (Model.Order is null)
+{
+    <p class="empty-state">Order not found.</p>
+}
+else
+{
+    var order = Model.Order;
+
+    <h1>Order @order.Id</h1>
+
+    <dl class="details">
+        <dt>Status</dt>
+        <dd><span class="badge badge-@order.Status.ToString().ToLower()">@order.Status</span></dd>
+
+        <dt>Trader</dt>
+        <dd>@order.Trader</dd>
+
+        <dt>Commodity</dt>
+        <dd>@order.Commodity</dd>
+
+        <dt>Side</dt>
+        <dd>@order.Side</dd>
+
+        <dt>Volume</dt>
+        <dd>@order.Volume.ToString("N2") MWh</dd>
+
+        <dt>Price</dt>
+        <dd>@order.Price.ToString("N2") / MWh</dd>
+
+        <dt>Value</dt>
+        <dd>@order.Value.ToString("C")</dd>
+
+        @if (order.SubmittedAtUtc != default)
+        {
+            <dt>Submitted</dt>
+            <dd>@order.SubmittedAtUtc.ToString("yyyy-MM-dd HH:mm 'UTC'")</dd>
+        }
+    </dl>
+
+    <p><a asp-page="/Orders/Index">&larr; Back to orders</a></p>
+}

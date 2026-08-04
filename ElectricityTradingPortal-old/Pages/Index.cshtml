@@ -1,0 +1,14 @@
+@page
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="hero">
+    <h1>Electricity Trading Portal</h1>
+    <p class="muted">Submit, list, and review electricity trade orders.</p>
+
+    <div class="hero-actions">
+        <a class="btn btn-primary" asp-page="/Orders/Create">Submit an Order</a>
+        <a class="btn" asp-page="/Orders/Index">View Orders</a>
+    </div>
+</div>
