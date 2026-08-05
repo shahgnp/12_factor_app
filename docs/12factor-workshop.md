@@ -378,18 +378,3 @@ The six factors this app was missing, in one map
 | 11 Logs | scattered `Console.WriteLine` | structured `ILogger` events |
 
 ---
-
-<!-- _class: lead -->
-
-## Your turn
-
-Each improvement is an isolated, one-file change in `Improvements/SWAP.md`.
-
-Suggested order (every one builds on the last):
-
-1. Config (3) — typed options
-2. Parity (10) — remove the `#if DEBUG` branch
-3. Shutdown (9) — respect the cancellation token
-4. Logs (11) — structured logging
-5. Processes (6) — durable storage
-6. Concurrency (8) — drafts that survive
