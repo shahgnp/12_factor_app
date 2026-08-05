@@ -66,3 +66,7 @@ code ElectricityTradingPortal-old
 ## 6. Go to Lab 1
 
 [https://github.com/shahgnp/12_factor_app/blob/main/docs/Lab1.md](https://github.com/shahgnp/12_factor_app/blob/main/docs/Lab1.md)
+
+## Canva Link
+
+[https://canva.link/65rab0d4x6x8fho](https://canva.link/65rab0d4x6x8fho)
