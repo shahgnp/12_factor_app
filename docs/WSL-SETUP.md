@@ -46,7 +46,7 @@ dotnet --list-runtimes   # should include Microsoft.AspNetCore.App 10.x
 ## 4. Clone the code inside WSL
 
 ```bash
-git clone <repo link>
+git clone https://github.com/shahgnp/12_factor_app.git
 ```
 
 ## 5. Open in VSCode
