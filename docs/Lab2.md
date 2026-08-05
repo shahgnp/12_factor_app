@@ -15,3 +15,17 @@ ASPNETCORE_URLS=http://0.0.0.0:8080 dotnet run
 ```bash
 ASPNETCORE_URLS=http://0.0.0.0:8081 dotnet run
 ```
+
+*Above only runs in debug mode*
+
+# Running application by publishing
+
+Step 1: Publish
+```bash
+dotnet publish -c Release -o ./publish
+```
+
+Step 2: Run
+```
+ASPNETCORE_URLS=http://0.0.0.0:8080 dotnet ElectricityTradingPortal.dll
+```
