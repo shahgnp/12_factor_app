@@ -20,6 +20,11 @@ This project is an ASP.NET Core 10 app, so the only real prerequisite is a
 sudo apt update && sudo apt upgrade -y
 ```
 
+> If there is an issue with nameserver run the following command and re-run the above command
+```bash
+echo 'nameserver 8.8.8.8' > /etc/resolv.conf
+```
+
 ```bash
 sudo apt install -y dotnet-sdk-10.0
 ```
