@@ -57,3 +57,7 @@ code ElectricityTradingPortal-new
 code ElectricityTradingPortal-old
 ```
 *Two VScodes should open*
+
+## 6. Go to Lab 1
+
+[https://github.com/shahgnp/12_factor_app/blob/main/docs/Lab1.md](https://github.com/shahgnp/12_factor_app/blob/main/docs/Lab1.md)
