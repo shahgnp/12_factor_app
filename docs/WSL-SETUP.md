@@ -52,7 +52,7 @@ git clone https://github.com/shahgnp/12_factor_app.git
 ## 5. Open in VSCode
 
 ```bash
-cd 12_FACTOR_APP
+cd 12_factor_app
 code ElectricityTradingPortal-new
 code ElectricityTradingPortal-old
 ```
