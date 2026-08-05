@@ -29,3 +29,12 @@ Step 2: Run
 ```
 ASPNETCORE_URLS=http://0.0.0.0:8080 dotnet ElectricityTradingPortal.dll
 ```
+
+# Update the config via ENV
+
+```bash
+export TradingLimits__MaxOrderValue=1000000
+export MarketDataFeed__Url=https://market.example.com/api
+export MarketDataFeed__PollIntervalSeconds=30
+
+```
