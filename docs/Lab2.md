@@ -27,7 +27,7 @@ dotnet publish -c Release -o ./publish
 
 Step 2: Run
 ```
-ASPNETCORE_URLS=http://0.0.0.0:8080 dotnet ElectricityTradingPortal.dll
+ASPNETCORE_URLS=http://0.0.0.0:8080 dotnet publish/ElectricityTradingPortal.dll
 ```
 
 # Update the config via ENV
@@ -36,5 +36,4 @@ ASPNETCORE_URLS=http://0.0.0.0:8080 dotnet ElectricityTradingPortal.dll
 export TradingLimits__MaxOrderValue=1000000
 export MarketDataFeed__Url=https://market.example.com/api
 export MarketDataFeed__PollIntervalSeconds=30
-
 ```
